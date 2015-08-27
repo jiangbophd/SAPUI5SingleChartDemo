@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Chart Demo</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<script src="resources/sap-ui-core.js"
+			id="sap-ui-bootstrap"
+			data-sap-ui-libs="sap.m,sap.makit"
+			data-sap-ui-theme="sap_bluecrystal" >
+		</script>
+		<script src="./TestData.js"></script>
+		<script src="./ChartBuilder.js"></script>
+		<!-- add sap.ui.table,sap.ui.ux3 and/or other libraries to 'data-sap-ui-libs' if required -->
+		<script>
+
+			
+			var HISTORY_PATH_PAGE = "page";
+			var MakitApp = undefined;
+			MakitApp = new sap.m.App("makitApp", {
+				initialPage : "NormalChartPage",
+				homeIcon : {
+					'phone' : 'img/57_iPhone_Desktop_Launch.png',
+					'phone@2' : 'img/114_iPhone-Retina_Web_Clip.png',
+					'tablet' : 'img/72_iPad_Desktop_Launch.png',
+					'tablet@2' : 'img/144_iPad_Retina_Web_Clip.png',
+					'favicon' : 'img/favicon.ico',
+					'precomposed': false
+				}
+			});
+
+			
+
+			var ssModel = getSingleSeriesJSONDataModel();
+			var oPage2 = createSSChart("NormalChartPage", "Standard Chart", ssModel);
+
+			MakitApp.addPage(oPage2);
+			MakitApp.placeAt("body");
+
+		
+
+		</script>
+	</head>
+	<body id="body" class="sapUiBody">
+		<div id="content1" style="width:100%; height: 500px;"></div>
+	</body>
+</html>
